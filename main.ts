@@ -11,7 +11,7 @@ input.onButtonPressed(Button.AB, function () {
 })
 let steps = 0
 let seconds = 0
-radio.setGroup(1)
+radio.setGroup(121)
 seconds = 0
 steps = 0
 basic.showIcon(IconNames.Happy)
