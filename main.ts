@@ -3,11 +3,21 @@ radio.onReceivedNumber(function (receivedNumber) {
         seconds = 0
         steps += 2
         basic.showNumber(steps)
+        basic.showIcon(IconNames.Happy)
     }
+})
+input.onButtonPressed(Button.A, function () {
+    basic.showNumber(steps)
+    basic.showIcon(IconNames.Happy)
 })
 input.onButtonPressed(Button.AB, function () {
     steps = 0
     basic.showNumber(steps)
+    basic.showIcon(IconNames.Happy)
+})
+input.onButtonPressed(Button.B, function () {
+    basic.showNumber(input.temperature())
+    basic.showIcon(IconNames.Happy)
 })
 let steps = 0
 let seconds = 0
@@ -23,7 +33,7 @@ basic.forever(function () {
     seconds += 1
     if (seconds > 60) {
         soundExpression.giggle.playUntilDone()
-        basic.showIcon(IconNames.Sad)
         seconds = 0
+        basic.showIcon(IconNames.Sad)
     }
 })
