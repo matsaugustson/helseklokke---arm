@@ -1,10 +1,19 @@
 radio.onReceivedNumber(function (receivedNumber) {
-    seconds = 0
-    basic.showNumber(receivedNumber)
+    if (receivedNumber == 0) {
+        seconds = 0
+        steps += 2
+        basic.showNumber(steps)
+    }
 })
+input.onButtonPressed(Button.AB, function () {
+    steps = 0
+    basic.showNumber(steps)
+})
+let steps = 0
 let seconds = 0
 radio.setGroup(1)
 seconds = 0
+steps = 0
 basic.showIcon(IconNames.Happy)
 basic.forever(function () {
     pins.servoWritePin(AnalogPin.P0, input.lightLevel() / 256 * 180)
